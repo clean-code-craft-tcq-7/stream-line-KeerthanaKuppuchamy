@@ -4,13 +4,15 @@ import java.util.List;
 
 public class SensorProcessor {
 
-	public static void getTemperatureSensorData() {
-		List<Integer> temperatureInFahrenheit = DataGenerator.generateRandomData(136);
-		System.out.println(temperatureInFahrenheit);
+	// Get Temperature sensor data
+	public static void getTemperatureSensorData(IMessagePrinter messagePrinter) {
+		List<Integer> temperatureInFahrenheit = DataGenerator.generateRandomData(Constants.MAX_TEMPERATURE_VALUE);
+		messagePrinter.printMessageToConsole(temperatureInFahrenheit);
 	}
 
-	public static void getSOCSensorData() {
-		List<Integer> socData = DataGenerator.generateRandomData(100);
-		System.out.println(socData);
+	// Get SOC data
+	public static void getSOCSensorData(IMessagePrinter messagePrinter) {
+		List<Integer> socData = DataGenerator.generateRandomData(Constants.MAX_SOC_VALUE);
+		messagePrinter.printMessageToConsole(socData);
 	}
 }
